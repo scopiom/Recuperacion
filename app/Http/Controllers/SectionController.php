@@ -40,6 +40,7 @@ class SectionController extends Controller
     {
         $section = new Section();
         $section->fill($request->all());
+        $this->authorize('store', $content);
         if ($section->user_id != NULL) {
         }
         $section->save();

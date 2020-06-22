@@ -48,3 +48,8 @@ Route::put('/prop/{content}/details', 'ContentController@propstatus')->name('pro
 
 
 //Route::get('/cont', 'ContentController@create')->name('content_create');
+
+
+Route::get('/activate','ContentController@activate')->middleware('auth');
+Route::get('/add/{id}' ,'ContentController@add')->middleware('auth');
+Route::delete('/delete/{id}' ,'ContentController@delete')->middleware('auth');

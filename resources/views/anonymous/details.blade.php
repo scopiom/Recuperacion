@@ -21,6 +21,12 @@
                                     <div class="col-sm-6">
                                         <strong class="card-title">Fecha de creación:</strong>
                                         <div>{{ $content->created_at }}</div>
+                                        <strong class="card-title">Última modificación:</strong>
+                                        @if( $content->updatep_at == NULL)
+                                        <div>No existen modificaciones...</div>
+                                        @else
+                                        <div>{{ $content->updated_at }}</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +41,7 @@
                                             document.getElementById('div').style.display='block';
                                             line = '<input type="text" name="name" placeholder="Ingresa tu nombre" required>';
                                             line += ' <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>';
-                                            line += '<br><font size="1">*Presiona el botón "suscriberse" nuevamente para confirmar tu suscripción :)</font>';
+                                            line += '<br><font size="1">*Presiona el botón "suscribirse" nuevamente para confirmar tu suscripción :)</font>';
                                             $('#div').append(line);
                                             ban = 1;
                                         }else{
